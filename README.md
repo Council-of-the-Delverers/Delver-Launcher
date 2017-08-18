@@ -15,3 +15,5 @@ Downloads are found in the [releases tab](https://github.com/Council-of-the-Delv
 - Remember check box, creates `Delver-Launcher.config`
 - Steam-alike gui
 - Parses command line arguments
+- Creates directory `save` if missing
+- Creates backups of the jar files
