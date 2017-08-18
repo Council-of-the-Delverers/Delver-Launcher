@@ -168,7 +168,7 @@ namespace Delver_Launcher
         }
 
         private void aboutLabel_Click(object sender, EventArgs e) {
-            MessageBox.Show("Alternative Delver launcher developed by the CotD team" + Environment.NewLine + "- automatic backups" + Environment.NewLine + "- parses command line arguments" + Environment.NewLine + "- checks for Java" + Environment.NewLine + "- lightweight", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Alternative Delver launcher developed by the CotD team" + Environment.NewLine + "- automatic backups" + Environment.NewLine + "- parses command line arguments" + Environment.NewLine + "- checks for Java" + Environment.NewLine + "- lightweight" + Environment.NewLine + "- Steam-alike clean gui" + Environment.NewLine + "v2.0.0", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
     
