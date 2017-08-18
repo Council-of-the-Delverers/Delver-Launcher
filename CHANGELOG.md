@@ -9,7 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Check for Java
 - Remember option
 - Choose between delver and DelvEdit
+- Creates `save` directory if missing
 - Exe icon
+- Creates backup of jar files
+
 
 ### Changed
 - new GUI, Steam-alike
