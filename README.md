@@ -1,3 +1,4 @@
+![D-L preview image](https://github.com/Council-of-the-Delverers/Delver-Launcher/blob/master/image.png)
 # Delver-Launcher
 Alternative Windows launcher for Delver
 
