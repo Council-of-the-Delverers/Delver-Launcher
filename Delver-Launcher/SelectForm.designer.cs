@@ -168,7 +168,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SelectForm";
+            this.Text = "Delver Launcher";
             this.Load += new System.EventHandler(this.SelectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
