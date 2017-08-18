@@ -1,24 +1,44 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Windows.Forms;
 
-namespace Delver_Launcher {
-    class Program {
-        static string ArgList = null;
-        static void Main(string[] args) {
+namespace Delver_Launcher
+{
+    static class Program
+    {
+
+        public static string ArgList = null;
+        public static string CONFIG_FILE = "Delver-Launcher.config";
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main(string[] args)
+        {
             foreach (var arg in args) {
                 ArgList = ArgList + arg + " ";
             }
 
-            Console.WriteLine(ArgList);
+            if (File.Exists(CONFIG_FILE)) {
+                using (Process process = new Process()) {
+                    process.StartInfo.FileName = "java";
+                    process.StartInfo.Arguments = "-jar " + File.ReadAllText(CONFIG_FILE).Trim() + ".jar";
+                   
+                    if (ArgList != null) {
+                        process.StartInfo.Arguments += " " + ArgList;
+                    }
 
+                    process.Start();
+                }
 
-            Process process = new Process();
-            process.StartInfo.FileName = "java";
-            process.StartInfo.Arguments = "-jar Delver.jar " + ArgList;
+                Environment.Exit(0);
+            }
 
-            process.Start();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SelectForm());
         }
-        
-
     }
 }
