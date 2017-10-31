@@ -30,7 +30,13 @@ namespace Delver_Launcher
                         process.StartInfo.Arguments += " " + ArgList;
                     }
 
-                    process.Start();
+                    try {
+                        process.Start();
+                    } catch (Exception ex) {
+                        Console.WriteLine(ex.Message);
+                        Environment.Exit(1);
+                    }
+                    
                 }
 
                 Environment.Exit(0);
