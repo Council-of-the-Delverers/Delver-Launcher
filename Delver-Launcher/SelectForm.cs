@@ -38,22 +38,22 @@ namespace Delver_Launcher
                     exitCode = process.ExitCode;
                 }
             } catch (Exception ex) {
-                MessageBox.Show("You do not have Java installed on your computer, because it was not found in %PATH%!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex.Message);
+                exitCode = 2;
+            }
+
+            if (exitCode != 0) {
+                MessageBox.Show("The application has assumed that you do not have Java installed on your computer, as it was not found in %PATH%!" + Environment.NewLine + Environment.NewLine +
+                    "If you belive this is in error, then make sure you've updated to Java 8, which will fix the issue. You should also try re-installing Java as it 99% is an corrupt install.", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(2);
             }
 
-            if(exitCode != 0) {
-                MessageBox.Show("You do not have Java installed on your computer, because it was not found in %PATH%!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(2);
-            }
-
-            if(!Directory.Exists("save")) {
+            if (!Directory.Exists("save")) {
                 try {
                     Directory.CreateDirectory("save");
                 } catch (Exception ex) {
-                    MessageBox.Show("Could not create the missing 'save' folder!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show("Could not create the missing 'save' directory!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Console.WriteLine(ex.Message);
                 }
             }
 
@@ -64,7 +64,7 @@ namespace Delver_Launcher
                     {
                         File.Copy("delver.jar", "delver_backup.jar");
                     } catch (Exception ex) {
-                        Console.WriteLine(ex.ToString());
+                        Console.WriteLine(ex.Message);
                         MessageBox.Show("Could not clone delver.jar!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     
@@ -77,10 +77,19 @@ namespace Delver_Launcher
                     try {
                         File.Copy("DelvEdit.jar", "DelvEdit_backup.jar");
                     } catch (Exception ex) {
-                        Console.WriteLine(ex.ToString());
+                        Console.WriteLine(ex.Message);
                         MessageBox.Show("Could not clone DelvEdit.jar!", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+            }
+
+            if (!delverRadio.Enabled && !delvEditRadio.Enabled) {
+                MessageBox.Show("Could not find Delver! This launcher requires Delver to be installed, it does not download the game for you. "+ Environment.NewLine +
+                    "Are you sure you've put the launcher in the same directory as Delver?" + Environment.NewLine + Environment.NewLine +
+                   "Very common Delver game path:" + Environment.NewLine +
+                   @"C:\Program Files (x86)\Steam\steamapps\common\Delver", "Delver-Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                rememberBox.Enabled = false;
             }
 
         }
@@ -104,7 +113,7 @@ namespace Delver_Launcher
                     break;
             }
 
-            if (alwaysBox.CheckState == CheckState.Checked) {
+            if (rememberBox.CheckState == CheckState.Checked) {
                 File.WriteAllText(Program.CONFIG_FILE, runChoice.ToString());
             }
 

@@ -33,7 +33,7 @@
             this.delverRadio = new System.Windows.Forms.RadioButton();
             this.delvEditRadio = new System.Windows.Forms.RadioButton();
             this.okBtn = new System.Windows.Forms.Button();
-            this.alwaysBox = new System.Windows.Forms.CheckBox();
+            this.rememberBox = new System.Windows.Forms.CheckBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.wwwLabel = new System.Windows.Forms.Label();
@@ -86,16 +86,16 @@
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
-            // alwaysBox
+            // rememberBox
             // 
-            this.alwaysBox.AutoSize = true;
-            this.alwaysBox.Location = new System.Drawing.Point(12, 83);
-            this.alwaysBox.Name = "alwaysBox";
-            this.alwaysBox.Size = new System.Drawing.Size(144, 21);
-            this.alwaysBox.TabIndex = 2;
-            this.alwaysBox.Text = "Remember choice";
-            this.toolTip1.SetToolTip(this.alwaysBox, "Always launch the same");
-            this.alwaysBox.UseVisualStyleBackColor = true;
+            this.rememberBox.AutoSize = true;
+            this.rememberBox.Location = new System.Drawing.Point(12, 83);
+            this.rememberBox.Name = "rememberBox";
+            this.rememberBox.Size = new System.Drawing.Size(144, 21);
+            this.rememberBox.TabIndex = 2;
+            this.rememberBox.Text = "Remember choice";
+            this.toolTip1.SetToolTip(this.rememberBox, "Always launch the same");
+            this.rememberBox.UseVisualStyleBackColor = true;
             // 
             // exitBtn
             // 
@@ -159,7 +159,7 @@
             this.Controls.Add(this.wwwLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.exitLabel);
-            this.Controls.Add(this.alwaysBox);
+            this.Controls.Add(this.rememberBox);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.delvEditRadio);
@@ -180,7 +180,7 @@
         private System.Windows.Forms.RadioButton delverRadio;
         private System.Windows.Forms.RadioButton delvEditRadio;
         private System.Windows.Forms.Button okBtn;
-        private System.Windows.Forms.CheckBox alwaysBox;
+        private System.Windows.Forms.CheckBox rememberBox;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label exitLabel;
