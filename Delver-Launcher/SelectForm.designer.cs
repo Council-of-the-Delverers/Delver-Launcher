@@ -40,6 +40,12 @@
             this.exitLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.aboutLabel = new System.Windows.Forms.Label();
+            this.subredditLabel = new System.Windows.Forms.Label();
+            this.discordLabel = new System.Windows.Forms.Label();
+            this.gearLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.workshopLabel = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // delverRadio
@@ -142,6 +148,7 @@
             // 
             // aboutLabel
             // 
+            this.aboutLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutLabel.AutoSize = true;
             this.aboutLabel.Location = new System.Drawing.Point(299, 9);
             this.aboutLabel.Name = "aboutLabel";
@@ -150,11 +157,71 @@
             this.aboutLabel.Text = "?";
             this.aboutLabel.Click += new System.EventHandler(this.aboutLabel_Click);
             // 
+            // subredditLabel
+            // 
+            this.subredditLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.subredditLabel.AutoSize = true;
+            this.subredditLabel.Location = new System.Drawing.Point(106, 18);
+            this.subredditLabel.Name = "subredditLabel";
+            this.subredditLabel.Size = new System.Drawing.Size(62, 17);
+            this.subredditLabel.TabIndex = 9;
+            this.subredditLabel.Text = "/r/Delver";
+            this.subredditLabel.Click += new System.EventHandler(this.subredditLabel_Click);
+            // 
+            // discordLabel
+            // 
+            this.discordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.discordLabel.AutoSize = true;
+            this.discordLabel.Location = new System.Drawing.Point(50, 35);
+            this.discordLabel.Name = "discordLabel";
+            this.discordLabel.Size = new System.Drawing.Size(118, 17);
+            this.discordLabel.TabIndex = 10;
+            this.discordLabel.Text = "Unofficial Discord";
+            this.discordLabel.Click += new System.EventHandler(this.discordLabel_Click);
+            // 
+            // gearLabel
+            // 
+            this.gearLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gearLabel.AutoSize = true;
+            this.gearLabel.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gearLabel.Location = new System.Drawing.Point(271, 11);
+            this.gearLabel.Name = "gearLabel";
+            this.gearLabel.Size = new System.Drawing.Size(22, 15);
+            this.gearLabel.TabIndex = 11;
+            this.gearLabel.Text = "";
+            this.gearLabel.Click += new System.EventHandler(this.gearLabel_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.workshopLabel);
+            this.groupBox1.Controls.Add(this.subredditLabel);
+            this.groupBox1.Controls.Add(this.discordLabel);
+            this.groupBox1.Location = new System.Drawing.Point(164, 29);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(174, 89);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Links";
+            // 
+            // workshopLabel
+            // 
+            this.workshopLabel.AutoSize = true;
+            this.workshopLabel.Location = new System.Drawing.Point(96, 52);
+            this.workshopLabel.Name = "workshopLabel";
+            this.workshopLabel.Size = new System.Drawing.Size(72, 17);
+            this.workshopLabel.TabIndex = 11;
+            this.workshopLabel.Text = "Workshop";
+            this.workshopLabel.Click += new System.EventHandler(this.workshopLabel_Click);
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 165);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gearLabel);
             this.Controls.Add(this.aboutLabel);
             this.Controls.Add(this.wwwLabel);
             this.Controls.Add(this.titleLabel);
@@ -170,6 +237,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delver Launcher";
             this.Load += new System.EventHandler(this.SelectForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +256,10 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label wwwLabel;
         private System.Windows.Forms.Label aboutLabel;
+        private System.Windows.Forms.Label subredditLabel;
+        private System.Windows.Forms.Label discordLabel;
+        private System.Windows.Forms.Label gearLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label workshopLabel;
     }
 }
